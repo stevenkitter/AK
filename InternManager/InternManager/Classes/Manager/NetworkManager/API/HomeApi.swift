@@ -54,6 +54,8 @@ extension HomeApi: TargetType {
             var params: [String: Any] = [:]
             params["page"] = page
             params["service"] = "Home.get_article"
+            params["from"] = "ios"
+            params["class_name"] = "新闻"
             return params
         case let .getAd(classid):
             var params: [String: Any] = [:]

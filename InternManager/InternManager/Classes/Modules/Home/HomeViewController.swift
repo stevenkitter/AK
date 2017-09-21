@@ -65,6 +65,7 @@ class HomeViewController: RootViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "AK官网"
         automaticallyAdjustsScrollViewInsets = false
         setupUI()
         setupRefresh()

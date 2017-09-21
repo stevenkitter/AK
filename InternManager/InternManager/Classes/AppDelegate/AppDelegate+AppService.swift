@@ -77,6 +77,10 @@ extension AppDelegate {
             
             RCIM.shared().connect(withToken: token, success: { (userId) in
                 DispatchQueue.main.async {
+                    if let currentIMUser = RCUserInfo(userId: userId, name: user.userName(), portrait: user.user_avatar ?? ""){
+                        RCIM.shared().currentUserInfo = currentIMUser
+                    }
+                    
                     let main = RootTabBarController()
                     self.window?.rootViewController = main
                 }
@@ -105,10 +109,66 @@ extension AppDelegate {
 extension AppDelegate {
     func iMCloud() {
         RCIM.shared().initWithAppKey(IMAppKey)
+        RCIM.shared().enablePersistentUserInfoCache = true
+        RCIM.shared().userInfoDataSource = AKIMDataSource.shared
+        RCIM.shared().enableTypingStatus = true
+        RCIM.shared().enabledReadReceiptConversationTypeList = [1]
+        RCIM.shared().enableSyncReadStatus = true
+        RCIM.shared().showUnkownMessage = true
+        RCIM.shared().showUnkownMessageNotificaiton = true
+        RCIM.shared().enableMessageRecall = true
         
+        RCIM.shared().connectionStatusDelegate = self
+        RCIM.shared().receiveMessageDelegate = self
+    }
+}
+//推送
+extension AppDelegate {
+    func notificationRes(application: UIApplication,launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+        let setting = UIUserNotificationSettings(types: [.badge,.alert,.sound], categories: nil)
+        application.registerUserNotificationSettings(setting)
+        RCIMClient.shared().recordLaunchOptionsEvent(launchOptions)
+        RCIMClient.shared().getPushExtra(fromLaunchOptions: launchOptions)
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMessageNotification(noti:)), name: NSNotification.Name.RCKitDispatchMessage, object: nil)
+    }
+    func didReceiveMessageNotification(noti: Notification) {
+        guard let left = noti.userInfo?["left"] as? Int else{
+            return
+        }
+        if RCIMClient.shared().sdkRunningMode == .background && 0 == left {
+            let unreadMsgCount = RCIMClient.shared().getUnreadCount([1])
+            UIApplication.shared.applicationIconBadgeNumber = Int(unreadMsgCount)
+        }
     }
 }
 
-extension AppDelegate {
+extension AppDelegate: RCIMConnectionStatusDelegate{
+    func onRCIMConnectionStatusChanged(_ status: RCConnectionStatus) {
+        switch status {
+        case .ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT:
+            WXAlertController.alertWithMessageOK(message: "您的账号在其他设备登录", okClosure: { (_) in
+                NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
+            })
+        case .ConnectionStatus_TOKEN_INCORRECT:
+            WXAlertController.alertWithMessageOK(message: "您的账号Token失效，请重新登录", okClosure: { (_) in
+                NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
+            })
+        case .ConnectionStatus_DISCONN_EXCEPTION:
+            WXAlertController.alertWithMessageOK(message: "您的账号被封", okClosure: { (_) in
+                NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
+            })
+        default:
+            return
+        }
+    }
+    
+}
+extension AppDelegate: RCIMReceiveMessageDelegate {
+    func onRCIMReceive(_ message: RCMessage!, left: Int32) {
+        
+    }
+    func onRCIMCustomLocalNotification(_ message: RCMessage!, withSenderName senderName: String!) -> Bool {
+        return false
+    }
     
 }

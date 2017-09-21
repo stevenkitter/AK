@@ -78,7 +78,7 @@ class CircleXViewController: RootViewController {
         self.view.addSubview(commentTool)
         commentTool.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.view)
-            make.bottom.equalTo(self.view)
+            make.top.equalTo(self.view.snp.bottom)
         }
         commentTool.onlySend()
     }

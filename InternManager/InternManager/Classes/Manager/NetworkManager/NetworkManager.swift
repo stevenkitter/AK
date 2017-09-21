@@ -111,16 +111,16 @@ final class RequestPlugin: PluginType {
     
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
         switch result {
-        case .success(let response):
-            var json:Dictionary? = try! JSONSerialization.jsonObject(with: response.data,options:.allowFragments) as! [String: Any]
-            
-            guard json?["message"] != nil  else {
-                return
-            }
-            guard let codeString = json?["status"]else {return}
-            
-            guard codeString as! Int != 1 else{return}
-            
+        case .success(_):
+//            var json:Dictionary? = try! JSONSerialization.jsonObject(with: response.data,options:.allowFragments) as! [String: Any]
+//            
+//            guard json?["message"] != nil  else {
+//                return
+//            }
+//            guard let codeString = json?["status"]else {return}
+//            
+//            guard codeString as! Int != 1 else{return}
+            print()
             
           
         case .failure(_):

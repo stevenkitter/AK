@@ -24,6 +24,9 @@ enum UserApi {
     case unRead(user_id: String)
     case myMessage(isComment: Bool,user_id: String, page: Int)
     case getPushedArticles(user_id: String, page: Int)
+    
+    case getUserInfo(userId: String)
+    case searchUser(key: String)
 }
 
 extension UserApi: TargetType {
@@ -125,8 +128,18 @@ extension UserApi: TargetType {
             params["page"] = page
             params["service"] = "Home.get_article_push"
             return params
-
+        case let .getUserInfo(userId):
+            var params: [String: Any] = [:]
+            params["user_id"] = userId
+            params["service"] = "Home.get_avatar"
+            return params
+        case let .searchUser(key):
+            var params: [String: Any] = [:]
+            params["key"] = key
+            params["service"] = "Home.get_users"
+            return params
         }
+    
     }
     var sampleData: Data {
         switch self {

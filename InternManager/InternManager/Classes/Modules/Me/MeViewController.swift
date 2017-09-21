@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 class MeViewController: RootViewController {
-    var cellData = [["我的消息","我的认证"],["推荐好友","个人设置","退出登录"]]
+    var cellData = [["我的消息","我的认证"],["推荐好友","个人设置","消息设置","退出登录"]]
     let headView = MeXHeaderView.instance()!
     
     override func viewDidLoad() {
@@ -150,6 +150,8 @@ extension MeViewController: UITableViewDelegate,UITableViewDataSource {
             self.navigationController?.pushViewController(vc, animated: true)
         }else if str == "退出登录" {
             logoutMethod()
+        }else if str == "消息设置" {
+            messgeSetting()
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -176,6 +178,12 @@ extension MeViewController {
             self.loadServerData()
         }
         
+    }
+    
+    func messgeSetting() {
+        let vc = AKMessageSettingViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 extension MeViewController: UIScrollViewDelegate {

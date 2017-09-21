@@ -40,3 +40,6 @@ extension UIImageView{
         self.kf.setImage(with: URL(string: str), placeholder: KPlaceholderImage)
     }
 }
+extension UITabBar {
+    
+}

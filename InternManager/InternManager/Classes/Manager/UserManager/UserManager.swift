@@ -28,6 +28,7 @@ class UserManager: NSObject {
     
     func logout()  {
         removeUserInfo()
+        RCIM.shared().logout()
     }
    
 }

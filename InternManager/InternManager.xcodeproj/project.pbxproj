@@ -115,6 +115,17 @@
 		EC6629821F72164F00C756FC /* AKMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629811F72164F00C756FC /* AKMessageViewController.swift */; };
 		EC6629841F7218D800C756FC /* IMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629831F7218D800C756FC /* IMUser.swift */; };
 		EC6629861F72465E00C756FC /* LeanCloudHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629851F72465E00C756FC /* LeanCloudHelper.swift */; };
+		EC9C901B1F734E7F005D14EA /* AKIMDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C901A1F734E7F005D14EA /* AKIMDataSource.swift */; };
+		EC9C901D1F735A06005D14EA /* AKUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C901C1F735A06005D14EA /* AKUserInfoManager.swift */; };
+		EC9C901F1F735D23005D14EA /* AKIMReceiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C901E1F735D23005D14EA /* AKIMReceiveManager.swift */; };
+		EC9C90211F7368C8005D14EA /* AKFindPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C90201F7368C8005D14EA /* AKFindPersonViewController.swift */; };
+		EC9C90231F736AF7005D14EA /* AKPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C90221F736AF7005D14EA /* AKPersonalViewController.swift */; };
+		EC9C90261F736B9E005D14EA /* AKPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C90241F736B9E005D14EA /* AKPersonTableViewCell.swift */; };
+		EC9C90271F736B9E005D14EA /* AKPersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9C90251F736B9E005D14EA /* AKPersonTableViewCell.xib */; };
+		EC9C90291F739C3B005D14EA /* AKChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C90281F739C3B005D14EA /* AKChatViewController.swift */; };
+		EC9C902C1F73B2E5005D14EA /* AKMessageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C902B1F73B2E5005D14EA /* AKMessageSettingViewController.swift */; };
+		EC9C902F1F73B34A005D14EA /* AKSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C902D1F73B34A005D14EA /* AKSettingTableViewCell.swift */; };
+		EC9C90301F73B34A005D14EA /* AKSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9C902E1F73B34A005D14EA /* AKSettingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +294,18 @@
 		EC6629811F72164F00C756FC /* AKMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMessageViewController.swift; sourceTree = "<group>"; };
 		EC6629831F7218D800C756FC /* IMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUser.swift; sourceTree = "<group>"; };
 		EC6629851F72465E00C756FC /* LeanCloudHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeanCloudHelper.swift; sourceTree = "<group>"; };
+		EC9C901A1F734E7F005D14EA /* AKIMDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKIMDataSource.swift; sourceTree = "<group>"; };
+		EC9C901C1F735A06005D14EA /* AKUserInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKUserInfoManager.swift; sourceTree = "<group>"; };
+		EC9C901E1F735D23005D14EA /* AKIMReceiveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKIMReceiveManager.swift; sourceTree = "<group>"; };
+		EC9C90201F7368C8005D14EA /* AKFindPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFindPersonViewController.swift; sourceTree = "<group>"; };
+		EC9C90221F736AF7005D14EA /* AKPersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPersonalViewController.swift; sourceTree = "<group>"; };
+		EC9C90241F736B9E005D14EA /* AKPersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPersonTableViewCell.swift; sourceTree = "<group>"; };
+		EC9C90251F736B9E005D14EA /* AKPersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKPersonTableViewCell.xib; sourceTree = "<group>"; };
+		EC9C90281F739C3B005D14EA /* AKChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKChatViewController.swift; sourceTree = "<group>"; };
+		EC9C902A1F73A39E005D14EA /* InternManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InternManager.entitlements; sourceTree = "<group>"; };
+		EC9C902B1F73B2E5005D14EA /* AKMessageSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMessageSettingViewController.swift; sourceTree = "<group>"; };
+		EC9C902D1F73B34A005D14EA /* AKSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKSettingTableViewCell.swift; sourceTree = "<group>"; };
+		EC9C902E1F73B34A005D14EA /* AKSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKSettingTableViewCell.xib; sourceTree = "<group>"; };
 		EF663AA5DD64947A59E0C8D3 /* Pods-InternManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternManager/Pods-InternManager.release.xcconfig"; sourceTree = "<group>"; };
 		F675C4203E5DED69C38ECC97 /* Pods-InternManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternManagerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternManagerUITests/Pods-InternManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -448,6 +471,7 @@
 		18E47BAB1F2F05B900BE1EEB /* InternManager */ = {
 			isa = PBXGroup;
 			children = (
+				EC9C902A1F73A39E005D14EA /* InternManager.entitlements */,
 				18E47BDA1F2F065200BE1EEB /* Classes */,
 			);
 			path = InternManager;
@@ -605,6 +629,9 @@
 				182FF34F1F595BFF00FB0AE8 /* WXMessageListTableViewCell.swift */,
 				182FF3501F595BFF00FB0AE8 /* WXMessageListTableViewCell.xib */,
 				182FF3551F59654200FB0AE8 /* WXPushedArticleViewController.swift */,
+				EC9C902B1F73B2E5005D14EA /* AKMessageSettingViewController.swift */,
+				EC9C902D1F73B34A005D14EA /* AKSettingTableViewCell.swift */,
+				EC9C902E1F73B34A005D14EA /* AKSettingTableViewCell.xib */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -694,6 +721,9 @@
 			isa = PBXGroup;
 			children = (
 				EC6629851F72465E00C756FC /* LeanCloudHelper.swift */,
+				EC9C901A1F734E7F005D14EA /* AKIMDataSource.swift */,
+				EC9C901C1F735A06005D14EA /* AKUserInfoManager.swift */,
+				EC9C901E1F735D23005D14EA /* AKIMReceiveManager.swift */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -711,6 +741,11 @@
 			isa = PBXGroup;
 			children = (
 				EC6629811F72164F00C756FC /* AKMessageViewController.swift */,
+				EC9C90201F7368C8005D14EA /* AKFindPersonViewController.swift */,
+				EC9C90221F736AF7005D14EA /* AKPersonalViewController.swift */,
+				EC9C90241F736B9E005D14EA /* AKPersonTableViewCell.swift */,
+				EC9C90251F736B9E005D14EA /* AKPersonTableViewCell.xib */,
+				EC9C90281F739C3B005D14EA /* AKChatViewController.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -795,6 +830,11 @@
 						DevelopmentTeam = 6QXH57WWCN;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					18E47BBC1F2F05B900BE1EEB = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -852,8 +892,10 @@
 				182FF3521F595BFF00FB0AE8 /* WXMessageListTableViewCell.xib in Resources */,
 				18F067731F593A0300522C37 /* MeHeadImageTableViewCell.xib in Resources */,
 				18E47BEE1F2F078100BE1EEB /* Info.plist in Resources */,
+				EC9C90301F73B34A005D14EA /* AKSettingTableViewCell.xib in Resources */,
 				184D529D1F57F787006F8DB5 /* WXCancelCollectionViewCell.xib in Resources */,
 				18DF74001F53F8F100E2919C /* CommentResTableViewCell.xib in Resources */,
+				EC9C90271F736B9E005D14EA /* AKPersonTableViewCell.xib in Resources */,
 				18E7360D1F502B1D00924AE9 /* CommentToolView.xib in Resources */,
 				18E47BEB1F2F078100BE1EEB /* Assets.xcassets in Resources */,
 				185BE4701F53A57900FD8CA3 /* CommentListTableViewCell.xib in Resources */,
@@ -1088,13 +1130,16 @@
 				18E47C161F2F224D00BE1EEB /* RootViewController.swift in Sources */,
 				184DA6BC1F72AAC2008193E6 /* RongCloudApi.swift in Sources */,
 				1852415A1F564B3600AF10AC /* CircleApi.swift in Sources */,
+				EC9C901F1F735D23005D14EA /* AKIMReceiveManager.swift in Sources */,
 				18DF74031F540FBE00E2919C /* MeTableViewCell.swift in Sources */,
 				18E47BFC1F2F0AC200BE1EEB /* UtilsConstant.swift in Sources */,
 				18C6D8211F3D3C9300694C07 /* Observable+ObjectMapper.swift in Sources */,
 				182FF3541F595D3B00FB0AE8 /* WXMessage.swift in Sources */,
 				186488D81F33136E00BC24C9 /* LoginViewController.swift in Sources */,
 				18DF740A1F541A6400E2919C /* MeXHeaderView.swift in Sources */,
+				EC9C902C1F73B2E5005D14EA /* AKMessageSettingViewController.swift in Sources */,
 				181CF8921F4FC7FC00BB6E82 /* HomeApi.swift in Sources */,
+				EC9C90261F736B9E005D14EA /* AKPersonTableViewCell.swift in Sources */,
 				185241571F56456100AF10AC /* WXImageViewCollectionViewCell.swift in Sources */,
 				18C6D8251F3D89DD00694C07 /* Response+ObjectMapper.swift in Sources */,
 				EC6629861F72465E00C756FC /* LeanCloudHelper.swift in Sources */,
@@ -1108,6 +1153,7 @@
 				18E47C141F2F223B00BE1EEB /* RootNavigationController.swift in Sources */,
 				18F0676B1F58F52300522C37 /* Date+Ex.swift in Sources */,
 				181CF8961F4FF7DF00BB6E82 /* String+Ex.swift in Sources */,
+				EC9C901D1F735A06005D14EA /* AKUserInfoManager.swift in Sources */,
 				182357511F556F7B005C9275 /* Circle.swift in Sources */,
 				185BE46F1F53A57900FD8CA3 /* CommentListTableViewCell.swift in Sources */,
 				1823574F1F556F4D005C9275 /* CircleXViewController.swift in Sources */,
@@ -1122,18 +1168,22 @@
 				180C2EAF1F595058005AA422 /* WXCollectsViewController.swift in Sources */,
 				18C6D8301F3DB5A300694C07 /* UITextField+LeftView.swift in Sources */,
 				18DF74101F5420E400E2919C /* RootViewController+Ex.swift in Sources */,
+				EC9C90291F739C3B005D14EA /* AKChatViewController.swift in Sources */,
+				EC9C90211F7368C8005D14EA /* AKFindPersonViewController.swift in Sources */,
 				18E47BF11F2F079900BE1EEB /* AppDelegate.swift in Sources */,
 				182FF3491F59569300FB0AE8 /* WXMessagesViewController.swift in Sources */,
 				184D52941F57F28B006F8DB5 /* WXPostCircleViewController.swift in Sources */,
 				182096AB1F30AD1600E90505 /* UserApi.swift in Sources */,
 				18E47C221F2F241B00BE1EEB /* MeViewController.swift in Sources */,
 				18E47C011F2F0FBE00BE1EEB /* UserManager.swift in Sources */,
+				EC9C901B1F734E7F005D14EA /* AKIMDataSource.swift in Sources */,
 				18E47C031F2F102900BE1EEB /* UserInfo.swift in Sources */,
 				18E47BFE1F2F0CD900BE1EEB /* NotificationNameConstant.swift in Sources */,
 				183AA6841F413D6D0060FB25 /* UserProfileManager.swift in Sources */,
 				187AF1CC1F305E3600FF821D /* NetworkManager.swift in Sources */,
 				181CF8711F4FB36500BB6E82 /* InteractViewController.swift in Sources */,
 				18648C061F3F18E100839B69 /* WXAlertController.swift in Sources */,
+				EC9C90231F736AF7005D14EA /* AKPersonalViewController.swift in Sources */,
 				18B641CA1F550BAF000AA067 /* RegisterXViewController.swift in Sources */,
 				18E735FD1F50138200924AE9 /* HomeCollect.swift in Sources */,
 				182FF34E1F595B7100FB0AE8 /* WXMessageListViewController.swift in Sources */,
@@ -1152,6 +1202,7 @@
 				184D52991F57F4F2006F8DB5 /* RSKPlaceholderTextView.swift in Sources */,
 				181CF88E1F4FC08300BB6E82 /* RefreshHeader.swift in Sources */,
 				185BE46C1F53A1B300FD8CA3 /* CommentListViewController.swift in Sources */,
+				EC9C902F1F73B34A005D14EA /* AKSettingTableViewCell.swift in Sources */,
 				18E7360B1F502B0F00924AE9 /* CommentToolView.swift in Sources */,
 				181CF88B1F4FB7D600BB6E82 /* HomeTableViewCell.swift in Sources */,
 				18DF740E1F541FEF00E2919C /* UIColor+Ex.swift in Sources */,
@@ -1320,6 +1371,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = InternManager/InternManager.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6QXH57WWCN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1340,7 +1393,7 @@
 					"$(PROJECT_DIR)/InternManager/Classes/Third/TIM/CommonLibrary/BlocksKit",
 					"$(PROJECT_DIR)/InternManager/Classes/Third/TIM/TIMAdapter/Framework/WXApi",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xuer.internmanager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuer.ak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "InternManager/Classes/Other/InternManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1356,6 +1409,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = InternManager/InternManager.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 6QXH57WWCN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1376,7 +1431,7 @@
 					"$(PROJECT_DIR)/InternManager/Classes/Third/TIM/CommonLibrary/BlocksKit",
 					"$(PROJECT_DIR)/InternManager/Classes/Third/TIM/TIMAdapter/Framework/WXApi",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xuer.internmanager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuer.ak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "InternManager/Classes/Other/InternManager-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
