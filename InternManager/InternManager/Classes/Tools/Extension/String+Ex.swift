@@ -46,4 +46,22 @@ extension String {
         }
         return two.lastStr(off: -4)
     }
+    
+}
+
+extension String {
+    static func timestamp()-> String {
+        let inter = Date().timeIntervalSince1970
+        let number = Int(inter)
+        return "\(number)"
+    }
+    func token()-> String? {
+        let defau = UserDefaults.standard
+        return defau.object(forKey: self) as? String
+    }
+    func saveDefault(value: String) {
+        let defau = UserDefaults.standard
+        defau.set(value, forKey: self)
+        defau.synchronize()
+    }
 }

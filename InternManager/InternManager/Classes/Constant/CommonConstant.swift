@@ -14,4 +14,5 @@ let KUserModelCacheName = "KUserModelCacheName"
 
 
 let IMAppKey = "lmxuhwagl069d"
+let IMSecret = "35prg7x8W1"
 

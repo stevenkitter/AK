@@ -30,8 +30,8 @@ class UserInfo: Mappable {
     var user_card: String?
     var collect: String?
     var publish: String?
- 
     
+        
     required init?(map: Map) {
         
     }
@@ -55,11 +55,18 @@ class UserInfo: Mappable {
         user_card <- map["user_card"]
         collect <- map["collect"]
         publish <- map["publish"]
+        
     }
     
     
 }
 
+extension UserInfo {
+    func userName()-> String {
+        let name = (self.user_nickname ?? "").exactStr(one: self.user_name ?? "", two: self.user_phone ?? "")
+        return name
+    }
+}
 
 class AvatarTransform : TransformType {
     

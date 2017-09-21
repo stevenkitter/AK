@@ -35,6 +35,7 @@
 		184D52991F57F4F2006F8DB5 /* RSKPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D52981F57F4F2006F8DB5 /* RSKPlaceholderTextView.swift */; };
 		184D529C1F57F787006F8DB5 /* WXCancelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D529A1F57F787006F8DB5 /* WXCancelCollectionViewCell.swift */; };
 		184D529D1F57F787006F8DB5 /* WXCancelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D529B1F57F787006F8DB5 /* WXCancelCollectionViewCell.xib */; };
+		184DA6BC1F72AAC2008193E6 /* RongCloudApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DA6BB1F72AAC2008193E6 /* RongCloudApi.swift */; };
 		184F24B91F42BC5100AE2C04 /* WXProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F24B81F42BC5100AE2C04 /* WXProgressView.swift */; };
 		185241531F56401600AF10AC /* WXCircleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185241511F56401500AF10AC /* WXCircleTableViewCell.swift */; };
 		185241541F56401600AF10AC /* WXCircleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185241521F56401600AF10AC /* WXCircleTableViewCell.xib */; };
@@ -171,6 +172,7 @@
 		184D52981F57F4F2006F8DB5 /* RSKPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSKPlaceholderTextView.swift; sourceTree = "<group>"; };
 		184D529A1F57F787006F8DB5 /* WXCancelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXCancelCollectionViewCell.swift; sourceTree = "<group>"; };
 		184D529B1F57F787006F8DB5 /* WXCancelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXCancelCollectionViewCell.xib; sourceTree = "<group>"; };
+		184DA6BB1F72AAC2008193E6 /* RongCloudApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RongCloudApi.swift; sourceTree = "<group>"; };
 		184F24B81F42BC5100AE2C04 /* WXProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXProgressView.swift; sourceTree = "<group>"; };
 		184F24BA1F42BFBE00AE2C04 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/InternManager-bzvnincxirjntjdzmqvjtmncqbgf/Build/Products/Debug-iphonesimulator/CryptoSwift/CryptoSwift.framework"; sourceTree = "<group>"; };
 		184F24BB1F42BFBE00AE2C04 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/InternManager-bzvnincxirjntjdzmqvjtmncqbgf/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				18C6D8221F3D3D0600694C07 /* BaseApiModel.swift */,
 				181CF8911F4FC7FC00BB6E82 /* HomeApi.swift */,
 				185241591F564B3600AF10AC /* CircleApi.swift */,
+				184DA6BB1F72AAC2008193E6 /* RongCloudApi.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1083,6 +1086,7 @@
 			files = (
 				181CF86F1F4FB35200BB6E82 /* HomeViewController.swift in Sources */,
 				18E47C161F2F224D00BE1EEB /* RootViewController.swift in Sources */,
+				184DA6BC1F72AAC2008193E6 /* RongCloudApi.swift in Sources */,
 				1852415A1F564B3600AF10AC /* CircleApi.swift in Sources */,
 				18DF74031F540FBE00E2919C /* MeTableViewCell.swift in Sources */,
 				18E47BFC1F2F0AC200BE1EEB /* UtilsConstant.swift in Sources */,

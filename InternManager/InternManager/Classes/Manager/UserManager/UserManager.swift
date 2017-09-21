@@ -51,12 +51,12 @@ extension UserManager {
             let curUser = UserInfo(JSONString: jsonStr)
             UserManager.shareUserManager.curUserInfo = curUser
             //有本地用户 再分辨是非需要自动登录环信
-            
+            NotificationCenter.default.post(name: NotificationLoginStateChange, object: true)
         }
         
         cache.fetch(key: KUserCacheName).onFailure { (error) in
             //本地没有数据 登录吧
-            
+            NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
         }
     }
     //移除本地用户信息
