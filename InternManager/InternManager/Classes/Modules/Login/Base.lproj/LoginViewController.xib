@@ -125,7 +125,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdi-BN-qL7">
                     <rect key="frame" x="128.5" y="79" width="119.5" height="42"/>
                     <attributedString key="attributedText">
-                        <fragment content="AK网贷">
+                        <fragment content="AK官网">
                             <attributes>
                                 <color key="NSColor" red="0.87627142667770386" green="0.46273231506347656" blue="0.37468546628952026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <font key="NSFont" size="36" name="STKaitiSC-Regular"/>

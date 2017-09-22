@@ -24,52 +24,36 @@ class HomeViewController: RootViewController {
    
     var articles:[Article] = []
     var ads: [AD] = []
-    let collecTitles = ["快速办卡","内部渠道","网贷工具",
-                        "一键提款","网贷大全","消费分期",
-                        "卡片进度","卡片激活"]
+    let collecTitles = ["国内","日韩","欧美","东南亚"]//["快速办卡","内部渠道","网贷工具",
+                        //"一键提款","网贷大全","消费分期",
+                        //"卡片进度","卡片激活"]
     
-    let adCycleScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect(x: 0, y: 0, width: KScreenWidth, height: KAdViewH)) { (index) in
-            //点击事件
-        }.then {
-//            // 是否自动滚动
-            $0.autoScroll = true
-//
-//            // 是否无限循环，此属性修改了就不存在轮播的意义了 😄
-//            $0.infiniteLoop = true
-//            
-//            // 滚动间隔时间(默认为2秒)
-            $0.autoScrollTimeInterval = 4.0
-//
-//            // 设置图片显示方式=UIImageView的ContentMode
-//            $0.imageViewContentMode = .scaleToFill
-//            
-//            // 设置滚动方向（ vertical || horizontal ）
-//            $0.scrollDirection = .horizontal
-//            
-            // 设置当前PageControl的样式 (.none, .system, .fill, .pill, .snake)
-            $0.customPageControlStyle = .pill
-            
-            // 非.system的状态下，设置PageControl的tintColor
-//            $0.customPageControlInActiveTintColor = UIColor.red
-//            
-//            // 设置.system系统的UIPageControl当前显示的颜色
-//            $0.pageControlCurrentPageColor = UIColor.white
-//            
-//            // 非.system的状态下，设置PageControl的间距(默认为8.0)
-//            $0.customPageControlIndicatorPadding = 8.0
-//            
-//            // 设置PageControl的位置 (.left, .right 默认为.center)
-//            $0.pageControlPosition = .center
-    }
-
+    var adCycleScrollView: LLCycleScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "AK官网"
         automaticallyAdjustsScrollViewInsets = false
+        adCycleScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect(x: 0, y: 0, width: KScreenWidth, height: KAdViewH)) { (index) in
+            //点击事件
+            let model = self.ads[index]
+            
+            let vc = YSWebViewController()
+            vc.url = model.ad_url ?? ""
+            self.navigationController?.pushViewController(vc, animated: true)
+            }.then {
+                
+                $0.autoScroll = true
+                
+                $0.autoScrollTimeInterval = 4.0
+                
+                $0.customPageControlStyle = .pill
+        }
         setupUI()
         setupRefresh()
         self.tableView.mj_header.beginRefreshing()
+        
+        
     }
 
     override func loadServerData() {
@@ -177,13 +161,13 @@ extension HomeViewController {
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: KCollectionViewCellH * 2 + 40, height: KCollectionViewCellH)
+        layout.itemSize = CGSize(width: (KScreenWidth - 30) * 0.5 , height: KCollectionViewCellH)
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: KUpLabelH + KAdViewH, width: KScreenWidth, height: KCollectionViewH), collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = KTintColor
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        collectionView.register(UINib(nibName: "AKHomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AKHomeCollectionViewCell")
         return collectionView
     }
 }
@@ -217,6 +201,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let article = articles[indexPath.row]
         let vc = ArticleDetailViewController()
         let webStr = WebUrl + (article.article_id ?? "") + "&user_id=" + (UserManager.shareUserManager.curUserInfo?.id ?? "")
@@ -232,12 +217,20 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collecTitles[indexPath.item]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-        cell.iconImageView.image = UIImage(named: item)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AKHomeCollectionViewCell", for: indexPath) as! AKHomeCollectionViewCell
+        cell.bgImageView.image = UIImage(named: item)
         cell.contentLabel.text = item
         cell.contentView.backgroundColor = UIColor.flatWatermelon;
         cell.contentView.corner()
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = collecTitles[indexPath.item]
+        let vc = AKHomeDetailViewController()
+        vc.class_name = item
+        vc.hidesBottomBarWhenPushed = true
+        vc.title = item
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

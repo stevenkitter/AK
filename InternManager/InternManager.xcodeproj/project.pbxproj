@@ -115,6 +115,13 @@
 		EC6629821F72164F00C756FC /* AKMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629811F72164F00C756FC /* AKMessageViewController.swift */; };
 		EC6629841F7218D800C756FC /* IMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629831F7218D800C756FC /* IMUser.swift */; };
 		EC6629861F72465E00C756FC /* LeanCloudHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629851F72465E00C756FC /* LeanCloudHelper.swift */; };
+		EC9A2BD61F74A53200B02557 /* AKHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A2BD41F74A53200B02557 /* AKHomeCollectionViewCell.swift */; };
+		EC9A2BD71F74A53200B02557 /* AKHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9A2BD51F74A53200B02557 /* AKHomeCollectionViewCell.xib */; };
+		EC9A2BD91F74A99100B02557 /* AKHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A2BD81F74A99100B02557 /* AKHomeDetailViewController.swift */; };
+		EC9A2BDC1F74A9DC00B02557 /* AKHomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A2BDA1F74A9DC00B02557 /* AKHomeDetailTableViewCell.swift */; };
+		EC9A2BDD1F74A9DC00B02557 /* AKHomeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9A2BDB1F74A9DC00B02557 /* AKHomeDetailTableViewCell.xib */; };
+		EC9A2BDF1F74AAC000B02557 /* AKLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A2BDE1F74AAC000B02557 /* AKLinkModel.swift */; };
+		EC9A2BE11F74B26000B02557 /* YSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A2BE01F74B26000B02557 /* YSWebViewController.swift */; };
 		EC9C901B1F734E7F005D14EA /* AKIMDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C901A1F734E7F005D14EA /* AKIMDataSource.swift */; };
 		EC9C901D1F735A06005D14EA /* AKUserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C901C1F735A06005D14EA /* AKUserInfoManager.swift */; };
 		EC9C901F1F735D23005D14EA /* AKIMReceiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C901E1F735D23005D14EA /* AKIMReceiveManager.swift */; };
@@ -294,6 +301,13 @@
 		EC6629811F72164F00C756FC /* AKMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMessageViewController.swift; sourceTree = "<group>"; };
 		EC6629831F7218D800C756FC /* IMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUser.swift; sourceTree = "<group>"; };
 		EC6629851F72465E00C756FC /* LeanCloudHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeanCloudHelper.swift; sourceTree = "<group>"; };
+		EC9A2BD41F74A53200B02557 /* AKHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC9A2BD51F74A53200B02557 /* AKHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC9A2BD81F74A99100B02557 /* AKHomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKHomeDetailViewController.swift; sourceTree = "<group>"; };
+		EC9A2BDA1F74A9DC00B02557 /* AKHomeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKHomeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		EC9A2BDB1F74A9DC00B02557 /* AKHomeDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKHomeDetailTableViewCell.xib; sourceTree = "<group>"; };
+		EC9A2BDE1F74AAC000B02557 /* AKLinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKLinkModel.swift; sourceTree = "<group>"; };
+		EC9A2BE01F74B26000B02557 /* YSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSWebViewController.swift; sourceTree = "<group>"; };
 		EC9C901A1F734E7F005D14EA /* AKIMDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKIMDataSource.swift; sourceTree = "<group>"; };
 		EC9C901C1F735A06005D14EA /* AKUserInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKUserInfoManager.swift; sourceTree = "<group>"; };
 		EC9C901E1F735D23005D14EA /* AKIMReceiveManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKIMReceiveManager.swift; sourceTree = "<group>"; };
@@ -358,6 +372,12 @@
 				18E735FE1F50159900924AE9 /* HomeCollectionViewCell.swift */,
 				18E735FF1F50159900924AE9 /* HomeCollectionViewCell.xib */,
 				18E736021F50253F00924AE9 /* AD.swift */,
+				EC9A2BD41F74A53200B02557 /* AKHomeCollectionViewCell.swift */,
+				EC9A2BD51F74A53200B02557 /* AKHomeCollectionViewCell.xib */,
+				EC9A2BD81F74A99100B02557 /* AKHomeDetailViewController.swift */,
+				EC9A2BDA1F74A9DC00B02557 /* AKHomeDetailTableViewCell.swift */,
+				EC9A2BDB1F74A9DC00B02557 /* AKHomeDetailTableViewCell.xib */,
+				EC9A2BDE1F74AAC000B02557 /* AKLinkModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -544,6 +564,7 @@
 		18E47BDE1F2F06FD00BE1EEB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EC9A2BE01F74B26000B02557 /* YSWebViewController.swift */,
 				18C6D8261F3DAE5F00694C07 /* WXActivityIndicatorView.swift */,
 				18648C051F3F18E000839B69 /* WXAlertController.swift */,
 				184F24B81F42BC5100AE2C04 /* WXProgressView.swift */,
@@ -893,6 +914,8 @@
 				18F067731F593A0300522C37 /* MeHeadImageTableViewCell.xib in Resources */,
 				18E47BEE1F2F078100BE1EEB /* Info.plist in Resources */,
 				EC9C90301F73B34A005D14EA /* AKSettingTableViewCell.xib in Resources */,
+				EC9A2BDD1F74A9DC00B02557 /* AKHomeDetailTableViewCell.xib in Resources */,
+				EC9A2BD71F74A53200B02557 /* AKHomeCollectionViewCell.xib in Resources */,
 				184D529D1F57F787006F8DB5 /* WXCancelCollectionViewCell.xib in Resources */,
 				18DF74001F53F8F100E2919C /* CommentResTableViewCell.xib in Resources */,
 				EC9C90271F736B9E005D14EA /* AKPersonTableViewCell.xib in Resources */,
@@ -964,6 +987,8 @@
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1139,6 +1164,7 @@
 				18DF740A1F541A6400E2919C /* MeXHeaderView.swift in Sources */,
 				EC9C902C1F73B2E5005D14EA /* AKMessageSettingViewController.swift in Sources */,
 				181CF8921F4FC7FC00BB6E82 /* HomeApi.swift in Sources */,
+				EC9A2BE11F74B26000B02557 /* YSWebViewController.swift in Sources */,
 				EC9C90261F736B9E005D14EA /* AKPersonTableViewCell.swift in Sources */,
 				185241571F56456100AF10AC /* WXImageViewCollectionViewCell.swift in Sources */,
 				18C6D8251F3D89DD00694C07 /* Response+ObjectMapper.swift in Sources */,
@@ -1147,6 +1173,7 @@
 				182FF3561F59654200FB0AE8 /* WXPushedArticleViewController.swift in Sources */,
 				185BE4721F53A62C00FD8CA3 /* Comment.swift in Sources */,
 				18E736031F50253F00924AE9 /* AD.swift in Sources */,
+				EC9A2BDC1F74A9DC00B02557 /* AKHomeDetailTableViewCell.swift in Sources */,
 				18F0676F1F590D9E00522C37 /* MeCell.swift in Sources */,
 				18F067761F593A1300522C37 /* MeInfoTableViewCell.swift in Sources */,
 				182FF34C1F59586900FB0AE8 /* UnRead.swift in Sources */,
@@ -1186,6 +1213,8 @@
 				EC9C90231F736AF7005D14EA /* AKPersonalViewController.swift in Sources */,
 				18B641CA1F550BAF000AA067 /* RegisterXViewController.swift in Sources */,
 				18E735FD1F50138200924AE9 /* HomeCollect.swift in Sources */,
+				EC9A2BD91F74A99100B02557 /* AKHomeDetailViewController.swift in Sources */,
+				EC9A2BDF1F74AAC000B02557 /* AKLinkModel.swift in Sources */,
 				182FF34E1F595B7100FB0AE8 /* WXMessageListViewController.swift in Sources */,
 				18DF73FF1F53F8F100E2919C /* CommentResTableViewCell.swift in Sources */,
 				184D52971F57F415006F8DB5 /* WXPostImage.swift in Sources */,
@@ -1203,6 +1232,7 @@
 				181CF88E1F4FC08300BB6E82 /* RefreshHeader.swift in Sources */,
 				185BE46C1F53A1B300FD8CA3 /* CommentListViewController.swift in Sources */,
 				EC9C902F1F73B34A005D14EA /* AKSettingTableViewCell.swift in Sources */,
+				EC9A2BD61F74A53200B02557 /* AKHomeCollectionViewCell.swift in Sources */,
 				18E7360B1F502B0F00924AE9 /* CommentToolView.swift in Sources */,
 				181CF88B1F4FB7D600BB6E82 /* HomeTableViewCell.swift in Sources */,
 				18DF740E1F541FEF00E2919C /* UIColor+Ex.swift in Sources */,
@@ -1398,7 +1428,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "InternManager/Classes/Other/InternManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1435,7 +1465,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "InternManager/Classes/Other/InternManager-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

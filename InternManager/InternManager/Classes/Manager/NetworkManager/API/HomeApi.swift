@@ -17,6 +17,7 @@ enum HomeApi {
     case setCollect(article_id: String, user_id: String)
     case sendCommentArticle(user_id: String, article_id: String, content: String)
     case sendCommentComment(user_id: String, article_id: String, content: String, comment_id: String)
+    case getlink(class_name: String)
 }
 
 extension HomeApi: TargetType {
@@ -95,6 +96,11 @@ extension HomeApi: TargetType {
             params["content"] = content
             params["comment_id"] = comment_id
             params["service"] = "User.send_comment"
+            return params
+        case let .getlink(class_name):
+            var params: [String: Any] = [:]
+            params["class_name"] = class_name
+            params["service"] = "Home.get_link"
             return params
         }
     }

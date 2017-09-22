@@ -54,6 +54,14 @@ class WXCircleTableViewCell: UITableViewCell {
         tableView.register(UINib(nibName: "CommentResTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentResTableViewCell")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let superVc = self.superVc() as? RootViewController else {return}
+        if let tag = Int(self.circle?.user_id ?? "") {
+            iconImageView.iconClicked(superVc: superVc, tag: tag)
+            nameLabel.iconClicked(superVc: superVc, tag: tag)
+        }
+    }
     
     func setupData() {
         guard let item = circle else {

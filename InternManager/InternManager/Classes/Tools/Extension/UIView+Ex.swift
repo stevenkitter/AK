@@ -40,6 +40,18 @@ extension UIImageView{
         self.kf.setImage(with: URL(string: str), placeholder: KPlaceholderImage)
     }
 }
+
+extension UIView {
+    func iconClicked(superVc: RootViewController, tag: Int) {
+        self.tag = tag
+        if self.gestureRecognizers?.count == nil {
+            self.isUserInteractionEnabled = true
+            let tapG = UITapGestureRecognizer(target: superVc, action: #selector(RootViewController.goPersonal(tapG:)))
+            self.addGestureRecognizer(tapG)
+        }
+    }
+}
+
 extension UITabBar {
     
 }

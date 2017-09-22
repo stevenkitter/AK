@@ -144,7 +144,7 @@ extension MeViewController: UITableViewDelegate,UITableViewDataSource {
             SVProgressHUD.showSuccess(withStatus: words)
         
         }else if str == "推荐好友" {
-            
+            SVProgressHUD.showInfo(withStatus: "开发中，敬请谅解")
         }else if str == "个人设置" {
             let vc = WXEditMeViewController()
             self.navigationController?.pushViewController(vc, animated: true)
@@ -184,6 +184,30 @@ extension MeViewController {
         let vc = AKMessageSettingViewController()
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func shareSDK() {
+        let shareParames = NSMutableDictionary()
+        shareParames.ssdkSetupShareParams(byText: "分享内容",
+                                          images : UIImage(named: "shareImg.png"),
+                                          url : NSURL(string:"http://mob.com") as URL!,
+                                          title : "分享标题",
+                                          type : SSDKContentType.image)
+        
+        //2.进行分享
+        ShareSDK.showShareActionSheet(self.view, items: nil, shareParams: shareParames) { (state, platform, param, entity, err, flag) in
+            switch state{
+                
+            case SSDKResponseState.success: print("分享成功")
+            case SSDKResponseState.fail:    print("授权失败,错误描述:\(err.debugDescription)")
+            case SSDKResponseState.cancel:  print("操作取消")
+                
+            default:
+                break
+            }
+
+        }
+        
     }
 }
 extension MeViewController: UIScrollViewDelegate {

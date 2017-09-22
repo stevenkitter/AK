@@ -14,11 +14,13 @@ class AKFindPersonViewController: RootViewController {
         $0.placeholder = "手机号／名字／id"
         $0.clearsOnBeginEditing = true
         $0.borderStyle = .roundedRect
+        $0.returnKeyType = .go
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "找人聊天"
         setupUI()
+        
         // Do any additional setup after loading the view.
     }
     func setupUI() {
@@ -76,6 +78,6 @@ extension AKFindPersonViewController: UITableViewDelegate, UITableViewDataSource
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
     }
 }

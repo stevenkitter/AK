@@ -55,3 +55,20 @@ class RootViewController: UIViewController {
     }
 
 }
+extension RootViewController {
+    func goPersonal(tapG: UITapGestureRecognizer) {
+        guard let tag = tapG.view?.tag else {return}
+        let userId = "\(tag)"
+        WXActivityIndicatorView.start()
+        NetworkManager.providerUserApi.request(.getUserInfo(userId: userId)).mapObject(AKUserInfo.self).subscribe(onNext: { (info) in
+            WXActivityIndicatorView.stop()
+            let vc = AKPersonalViewController()
+            vc.user = info
+            self.navigationController?.pushViewController(vc, animated: true)
+        }, onError: { (err) in
+            WXActivityIndicatorView.stop()
+        }).addDisposableTo(disposeBag)
+        
+        
+    }
+}

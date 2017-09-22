@@ -40,6 +40,16 @@ class CommentListTableViewCell: UITableViewCell {
         
         commentsTabelView.register(UINib(nibName: "CommentResTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentResTableViewCell")
         commentsTabelView.estimatedRowHeight = 80
+        
+        
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let superVc = self.superVc() as? RootViewController else {return}
+        if let tag = Int(self.comment?.user_id ?? "") {
+            iconImageView.iconClicked(superVc: superVc, tag: tag)
+            nameLabel.iconClicked(superVc: superVc, tag: tag)
+        }
     }
     
     func setupUIData() {

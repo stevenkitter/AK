@@ -9,7 +9,7 @@
 import UIKit
 
 class InteractViewController: RootViewController {
-    let titles = [["社区讨论"],["花呗白条讨论"],["会员介绍","加入会员"]]
+    let titles = [["社区讨论"]/*,["花呗白条讨论"],["会员介绍","加入会员"]*/]
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "互动"

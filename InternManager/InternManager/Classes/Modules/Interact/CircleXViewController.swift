@@ -56,7 +56,7 @@ class CircleXViewController: RootViewController {
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
         tableView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0,55, 0))
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0,0, 0))
         }
         tableView.register(UINib(nibName: "WXCircleTableViewCell", bundle: nil), forCellReuseIdentifier: "WXCircleTableViewCell")
         
@@ -78,7 +78,7 @@ class CircleXViewController: RootViewController {
         self.view.addSubview(commentTool)
         commentTool.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.view)
-            make.top.equalTo(self.view.snp.bottom)
+            make.bottom.equalTo(self.view).offset(55)
         }
         commentTool.onlySend()
     }

@@ -9,13 +9,14 @@
 import UIKit
 
 class AKPersonalViewController: RootViewController {
-
+    var userId = ""
     var user: AKUserInfo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         title = user.userName()
+      
         // Do any additional setup after loading the view.
     }
     func setupUI() {
@@ -40,6 +41,8 @@ class AKPersonalViewController: RootViewController {
         btn.setTitle("发消息", for: .normal)
         tableView.tableFooterView = footView
     }
+    
+    
     
     func chat() {
         guard let conversation = AKChatViewController(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: user.user_id) else {return}

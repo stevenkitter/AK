@@ -15,7 +15,7 @@ class AKMessageViewController: RCConversationListViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "消息"
+        self.title = "互聊消息"
         self.setDisplayConversationTypes([1])
         conversationListTableView.tableFooterView = UIView()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "addfriend_icon"), style: .plain, target: self, action: #selector(findPerson))
@@ -29,7 +29,7 @@ class AKMessageViewController: RCConversationListViewController {
                 
                 item.badgeValue = "\(count)"
             }else{
-                item.badgeValue = ""
+                item.badgeValue = nil
             }
             
             

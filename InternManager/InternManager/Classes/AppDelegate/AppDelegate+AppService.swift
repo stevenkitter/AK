@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import IQKeyboardManagerSwift
 import SVProgressHUD
+
 //init
 extension AppDelegate {
     func initSetup()  {
@@ -19,7 +20,7 @@ extension AppDelegate {
         iMCloud()
         initUserManager()
         keyboardManager()
-    
+//        initShare()
     }
     
     func keyboardManager() {
@@ -31,6 +32,7 @@ extension AppDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = LoadingViewController()
+        UINavigationBar.appearance().barTintColor = KNaviColor
     }
     //初始化app服务
     func initService()  {
@@ -87,11 +89,17 @@ extension AppDelegate {
                 
 
             }, error: { (err) in
-                SVProgressHUD.showError(withStatus: "错误码\(err)，请重新登录")
-                NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
-            }, tokenIncorrect: { 
-                SVProgressHUD.showError(withStatus: "token失效，请重新登录")
-                NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
+                DispatchQueue.main.async{
+                    SVProgressHUD.showError(withStatus: "错误码\(err)，请重新登录")
+                    NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
+                }
+                
+            }, tokenIncorrect: {
+                DispatchQueue.main.async{
+                    SVProgressHUD.showError(withStatus: "token失效，请重新登录")
+                    NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
+                }
+                
             })
             
             
@@ -102,6 +110,18 @@ extension AppDelegate {
 extension AppDelegate {
     func initUserManager() -> Void {
         UserManager.shareUserManager.loadUserInfo()
+    }
+}
+
+//分享
+extension AppDelegate {
+    func initShare() {
+        ShareSDK.registerActivePlatforms([SSDKPlatformType.typeWechat.rawValue], onImport: { (platform) in
+            ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+        }) { (platform, appInfo) in
+            appInfo?.ssdkSetupWeChat(byAppId: "wx4868b35061f87885",
+                                     appSecret: "64020361b8ec4c99936c0e3999a9f249")
+        }
     }
 }
 
@@ -163,6 +183,7 @@ extension AppDelegate: RCIMConnectionStatusDelegate{
     }
     
 }
+
 extension AppDelegate: RCIMReceiveMessageDelegate {
     func onRCIMReceive(_ message: RCMessage!, left: Int32) {
         

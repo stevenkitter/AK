@@ -41,7 +41,7 @@
                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
-                        <fragment content="网贷">
+                        <fragment content="官网">
                             <attributes>
                                 <color key="NSColor" red="0.87627142667770386" green="0.46273231506347656" blue="0.37468546628952026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <font key="NSFont" size="36" name=".PingFangSC-Regular"/>

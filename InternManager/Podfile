@@ -40,7 +40,16 @@ target 'InternManager' do
   
   pod 'RongCloudIM/IMLib', '~> 2.8.3'
   pod 'RongCloudIM/IMKit', '~> 2.8.3'
+  
+  #share
+  pod 'ShareSDK3'
+  pod 'MOBFoundation'
+  pod 'ShareSDK3/ShareSDKUI'
+  pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
+  pod 'ShareSDK3/ShareSDKExtension'
   # Pods for InternManager
+
+
 
   target 'InternManagerTests' do
     inherit! :search_paths
