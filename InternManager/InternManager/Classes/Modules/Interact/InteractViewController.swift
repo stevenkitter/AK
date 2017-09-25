@@ -9,7 +9,7 @@
 import UIKit
 
 class InteractViewController: RootViewController {
-    let titles = [["社区讨论"]/*,["花呗白条讨论"],["会员介绍","加入会员"]*/]
+    let titles = [["社区讨论"],["管理员问"]/*,["花呗白条讨论"],["会员介绍","加入会员"]*/]
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "互动"
@@ -74,6 +74,12 @@ extension InteractViewController: UITableViewDelegate,UITableViewDataSource {
             vc.title = "社区讨论"
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
+        }else if titleStr == "管理员问" {
+            guard let conversation = AKChatViewController(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: "42") else {return}
+            conversation.title = "管理员问"
+            conversation.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(conversation, animated: true)
+
         }
     }
 }
