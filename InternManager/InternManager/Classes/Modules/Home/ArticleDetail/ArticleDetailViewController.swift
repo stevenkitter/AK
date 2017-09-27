@@ -172,5 +172,8 @@ class ArticleDetailViewController: RootViewController {
 
 }
 extension ArticleDetailViewController: WKNavigationDelegate {
-    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.title = webView.title
+        
+    }
 }
