@@ -3,7 +3,7 @@
 //
 
 #import "XGPush.h"
-
+#import "XGSetting.h"
 #import <RongIMKit/RongIMKit.h>
 
 

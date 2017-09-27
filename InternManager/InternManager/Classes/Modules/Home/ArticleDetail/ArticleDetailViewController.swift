@@ -12,9 +12,11 @@ import RxCocoa
 import RxSwift
 import SVProgressHUD
 class ArticleDetailViewController: RootViewController {
+    var article: Article?
     
     public var webURLStr = ""
     public var articleID = ""
+    
     let progressView = UIProgressView(progressViewStyle: .default).then {
         $0.progressTintColor = KNaviColor
     }
@@ -32,6 +34,20 @@ class ArticleDetailViewController: RootViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         commentView.loadUserInfo()
+        
+        let pushD = UserDefaults.standard
+        guard let result = pushD.object(forKey: "push") as? String else{return}
+        if result == "push" {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(reback))
+        }else{
+            self.navigationItem.leftBarButtonItem = nil
+        }
+    }
+    func reback() {
+        let pushD = UserDefaults.standard
+        pushD.set("", forKey: "push")
+        pushD.synchronize()
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     fileprivate func setupUI() {
         self.view.addSubview(self.webView)
@@ -71,7 +87,7 @@ class ArticleDetailViewController: RootViewController {
             case 0:
                 self.like(btn)
             case 1:
-                print("share")
+                self.shareSDK()
             case 2:
                 self.send()
             default:
@@ -130,6 +146,30 @@ class ArticleDetailViewController: RootViewController {
         super.didReceiveMemoryWarning()
         
     }
+    func shareSDK() {
+        let shareParames = NSMutableDictionary()
+        shareParames.ssdkSetupShareParams(byText: article?.article_content ?? "",
+                                          images : article?.file_path,
+                                          url : NSURL(string:webURLStr) as URL!,
+                                          title : article?.article_title ?? "",
+                                          type : SSDKContentType.auto)
+        
+        //2.进行分享
+        ShareSDK.showShareActionSheet(self.view, items: nil, shareParams: shareParames) { (state, platform, param, entity, err, flag) in
+            switch state{
+                
+            case SSDKResponseState.success: print("分享成功")
+            case SSDKResponseState.fail:    print("授权失败,错误描述:\(err.debugDescription)")
+            case SSDKResponseState.cancel:  print("操作取消")
+                
+            default:
+                break
+            }
+            
+        }
+        
+    }
+
 }
 extension ArticleDetailViewController: WKNavigationDelegate {
     

@@ -13,6 +13,6 @@ let KUserCacheName = "KUserCacheName"
 let KUserModelCacheName = "KUserModelCacheName"
 
 
-let IMAppKey = "lmxuhwagl069d"
-let IMSecret = "35prg7x8W1"
+let IMAppKey = "z3v5yqkbz42s0"
+let IMSecret = "Pf9UNSiS4Al"
 

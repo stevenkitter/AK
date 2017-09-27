@@ -41,7 +41,11 @@ extension UserManager {
         guard let jsonStr = curUser.toJSONString(prettyPrint: true) else {
             return
         }
-        
+        XGPush.setAccount("userid_" + (curUser.id ?? "0"), successCallback: {
+            
+        }) {
+            
+        }
         let cache = Shared.stringCache
         cache.set(value: jsonStr, key: KUserCacheName)
     }

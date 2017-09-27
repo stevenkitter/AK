@@ -58,6 +58,19 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = deviceToken.description.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "").replacingOccurrences(of: " ", with: "")
         RCIMClient.shared().setDeviceToken(token)
+        if let userId = UserManager.shareUserManager.curUserInfo?.id {
+            XGPush.registerDevice(deviceToken, account: "userid_" + userId, successCallback: {
+                
+            }, errorCallback: { 
+                
+            })
+        }else{
+            XGPush.registerDevice(deviceToken, successCallback: { 
+                
+            }, errorCallback: { 
+                
+            })
+        }
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -66,21 +79,50 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         //收到推送消息 有红点无需跳转
-       RCIMClient.shared().recordRemoteNotificationEvent(userInfo)
+        RCIMClient.shared().recordRemoteNotificationEvent(userInfo)
+        XGPush.handleReceiveNotification(userInfo, successCallback: { 
+            
+        }) { 
+            
+        }
+        if let info = userInfo as? [String: Any] {
+            handlePush(userInfo: info)
+        }
+        
     }
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         RCIMClient.shared().recordLocalNotificationEvent(notification)
     }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        XGPush.handleReceiveNotification(userInfo, successCallback: { 
+            
+        }) { 
+            
+        }
+        if let info = userInfo as? [String: Any] {
+            handlePush(userInfo: info)
+        }
+        completionHandler(.newData)
+    }
     
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
+        completionHandler([.badge, .sound, .alert])
         
     }
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let info = response.notification.request.content.userInfo
+        XGPush.handleReceiveNotification(info, successCallback: { 
+            
+        }, errorCallback: {
+            
+        })
+        if let uinfo = info as? [String: Any] {
+            handlePush(userInfo: uinfo)
+        }
         completionHandler()
     }
     
