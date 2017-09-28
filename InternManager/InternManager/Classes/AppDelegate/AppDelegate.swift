@@ -9,6 +9,9 @@
 import UIKit
 import UserNotifications
 import RxSwift
+import Fabric
+import Crashlytics
+
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         initSetup()
         notificationRes(application: application, launchOptions: launchOptions)
+        
+        Fabric.with([Crashlytics.self])
+
         return true
     }
 

@@ -115,6 +115,8 @@
 		EC6629821F72164F00C756FC /* AKMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629811F72164F00C756FC /* AKMessageViewController.swift */; };
 		EC6629841F7218D800C756FC /* IMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629831F7218D800C756FC /* IMUser.swift */; };
 		EC6629861F72465E00C756FC /* LeanCloudHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6629851F72465E00C756FC /* LeanCloudHelper.swift */; };
+		EC77AED21F7CCC8800FBC886 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC77AED01F7CCC8800FBC886 /* Fabric.framework */; };
+		EC77AED31F7CCC8800FBC886 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC77AED11F7CCC8800FBC886 /* Crashlytics.framework */; };
 		EC9A2BD61F74A53200B02557 /* AKHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A2BD41F74A53200B02557 /* AKHomeCollectionViewCell.swift */; };
 		EC9A2BD71F74A53200B02557 /* AKHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC9A2BD51F74A53200B02557 /* AKHomeCollectionViewCell.xib */; };
 		EC9A2BD91F74A99100B02557 /* AKHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A2BD81F74A99100B02557 /* AKHomeDetailViewController.swift */; };
@@ -301,6 +303,8 @@
 		EC6629811F72164F00C756FC /* AKMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMessageViewController.swift; sourceTree = "<group>"; };
 		EC6629831F7218D800C756FC /* IMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUser.swift; sourceTree = "<group>"; };
 		EC6629851F72465E00C756FC /* LeanCloudHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeanCloudHelper.swift; sourceTree = "<group>"; };
+		EC77AED01F7CCC8800FBC886 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		EC77AED11F7CCC8800FBC886 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		EC9A2BD41F74A53200B02557 /* AKHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC9A2BD51F74A53200B02557 /* AKHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKHomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC9A2BD81F74A99100B02557 /* AKHomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKHomeDetailViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC66297C1F720FD800C756FC /* libsqlite3.tbd in Frameworks */,
+				EC77AED21F7CCC8800FBC886 /* Fabric.framework in Frameworks */,
 				EC66297A1F720FCB00C756FC /* libz.tbd in Frameworks */,
 				EC6629781F720FC000C756FC /* libc++.tbd in Frameworks */,
 				EC6629761F720FB500C756FC /* libstdc++.6.tbd in Frameworks */,
@@ -338,6 +343,7 @@
 				187AF1E51F305E7500FF821D /* Pods_InternManagerTests.framework in Frameworks */,
 				187AF1E61F305E7500FF821D /* Pods_InternManagerUITests.framework in Frameworks */,
 				AE532E92255F72CC901D6735 /* Pods_InternManager.framework in Frameworks */,
+				EC77AED31F7CCC8800FBC886 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +747,8 @@
 		EC66295E1F720F2E00C756FC /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				EC77AED01F7CCC8800FBC886 /* Fabric.framework */,
+				EC77AED11F7CCC8800FBC886 /* Crashlytics.framework */,
 				EC6629851F72465E00C756FC /* LeanCloudHelper.swift */,
 				EC9C901A1F734E7F005D14EA /* AKIMDataSource.swift */,
 				EC9C901C1F735A06005D14EA /* AKUserInfoManager.swift */,
@@ -784,6 +792,7 @@
 				18E47BA71F2F05B900BE1EEB /* Resources */,
 				DBAAFF61134EAE6A06D64017 /* [CP] Embed Pods Frameworks */,
 				1D5124BBEC23AD9A47005EBA /* [CP] Copy Pods Resources */,
+				EC77AECF1F7CCC1600FBC886 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1131,6 +1140,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InternManagerTests/Pods-InternManagerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EC77AECF1F7CCC1600FBC886 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5881dda9155010ac59489c35dfd4e9e3c1a618c1 e67dd10843c8e5f6e9ed772686cfd6ef21dd8016dea2b5fa959c5dd06a79abf2";
 		};
 		F5398FCF696FF7E39C4732D6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

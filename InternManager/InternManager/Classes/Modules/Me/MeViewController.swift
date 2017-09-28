@@ -18,6 +18,7 @@ class MeViewController: RootViewController {
         setupData()
         setupRefresh()
         setupNotifi()
+        loadServerData()
         self.view.isUserInteractionEnabled = true
     }
     override func viewWillAppear(_ animated: Bool) {
