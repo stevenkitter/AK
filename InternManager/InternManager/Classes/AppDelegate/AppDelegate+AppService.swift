@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import IQKeyboardManagerSwift
 import SVProgressHUD
-
+import UserNotifications
+import ObjectMapper
 //init
 extension AppDelegate {
     func initSetup()  {
@@ -18,9 +19,10 @@ extension AppDelegate {
         initWindow()
         initService()
         iMCloud()
+        xGPush()
         initUserManager()
         keyboardManager()
-//        initShare()
+        initShare()
     }
     
     func keyboardManager() {
@@ -98,6 +100,9 @@ extension AppDelegate {
                 DispatchQueue.main.async{
                     SVProgressHUD.showError(withStatus: "token失效，请重新登录")
                     NotificationCenter.default.post(name: NotificationLoginStateChange, object: false)
+                    let defau = UserDefaults.standard
+                    defau.setValue(nil, forKey: userId)
+                    defau.synchronize()
                 }
                 
             })
@@ -119,8 +124,8 @@ extension AppDelegate {
         ShareSDK.registerActivePlatforms([SSDKPlatformType.typeWechat.rawValue], onImport: { (platform) in
             ShareSDKConnector.connectWeChat(WXApi.classForCoder())
         }) { (platform, appInfo) in
-            appInfo?.ssdkSetupWeChat(byAppId: "wx4868b35061f87885",
-                                     appSecret: "64020361b8ec4c99936c0e3999a9f249")
+            appInfo?.ssdkSetupWeChat(byAppId: "wx51992ecec5ca43dc",
+                                     appSecret: "a48ee6a2672d32f415ef5374e51ed4c5")
         }
     }
 }
@@ -142,14 +147,80 @@ extension AppDelegate {
         RCIM.shared().receiveMessageDelegate = self
     }
 }
+extension AppDelegate{
+    func xGPush() {
+        //[[XGPush defaultManager] startXGWithAppID:2200262432 appKey:@"I89WTUY132GJ"];
+        if let xgS = XGSetting.getInstance() as? XGSetting {
+            xgS.enableDebug(true)
+        }
+        XGPush.startApp(2200263144, appKey: "IH423BE3E3EN")
+        XGPush.isPush { (bol) in
+            
+        }
+        registerAPNS()
+    }
+    func registerAPNS() {
+        
+        registerPush10()
+      
+    }
+    
+    func registerPush10(){
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            center.requestAuthorization(options: [.badge, .sound, .alert]) { (flag, err) in
+                
+            }
+            UIApplication.shared.registerForRemoteNotifications()
+        } else {
+            let setting = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(setting)
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+       
+    }
+    func handlePush(userInfo: [String: Any]) {
+        WXAlertController.alertWithMessageOKCancel(message: "有新消息，立刻查看？", okClosure: { (_) in
+            self.gotoMsgVc(info: userInfo)
+        }) { (_) in
+            
+        }
+    }
+    func gotoMsgVc(info: [String: Any]) {
+        let pushD = UserDefaults.standard
+        pushD.set("push", forKey: "push")
+        pushD.synchronize()
+        
+        guard let _ = info["type"] else{
+            return
+        }
+        guard let model = Article(JSON: info) else {return}
+        let vc = ArticleDetailViewController()
+        let webStr = WebUrl + (model.article_id ?? "") + "&user_id=" + (UserManager.shareUserManager.curUserInfo?.id ?? "")
+        vc.articleID = model.article_id ?? ""
+        vc.webURLStr = webStr
+        let navi = RootNavigationController(rootViewController: vc)
+        self.window?.rootViewController?.present(navi, animated: true, completion: nil)
+
+    }
+  
+}
 //推送
 extension AppDelegate {
     func notificationRes(application: UIApplication,launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
-        let setting = UIUserNotificationSettings(types: [.badge,.alert,.sound], categories: nil)
-        application.registerUserNotificationSettings(setting)
+       
+        
         RCIMClient.shared().recordLaunchOptionsEvent(launchOptions)
         RCIMClient.shared().getPushExtra(fromLaunchOptions: launchOptions)
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMessageNotification(noti:)), name: NSNotification.Name.RCKitDispatchMessage, object: nil)
+        guard let option = launchOptions else {return}
+        XGPush.handleLaunching(option, successCallback: {
+            
+        }) { 
+            
+        }
+        
     }
     func didReceiveMessageNotification(noti: Notification) {
         guard let left = noti.userInfo?["left"] as? Int else{

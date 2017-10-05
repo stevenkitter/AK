@@ -16,7 +16,7 @@ class WXAlertController {
         alertC.addAction(okAction)
         alertC.addAction(cancelAction)
         
-        RootController?.present(alertC, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertC, animated: true, completion: nil)
     }
     
     static func alertWithMessageOK(message: String, okClosure: ((_ alertAction: UIAlertAction) -> Void)?){
@@ -24,7 +24,7 @@ class WXAlertController {
         let alertC = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "确定", style: .destructive, handler: okClosure)
         alertC.addAction(okAction)
-        RootController?.present(alertC, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertC, animated: true, completion: nil)
     }
     
     static func actionWithMessageOKCancel(message: String, okClosure: ((_ alertAction: UIAlertAction) -> Void)?, cancelClosure: ((_ alertAction: UIAlertAction) -> Void)?){
@@ -35,6 +35,6 @@ class WXAlertController {
         alertC.addAction(okAction)
         alertC.addAction(cancelAction)
         
-        RootController?.present(alertC, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertC, animated: true, completion: nil)
     }
 }

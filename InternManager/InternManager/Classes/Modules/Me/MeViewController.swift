@@ -18,6 +18,7 @@ class MeViewController: RootViewController {
         setupData()
         setupRefresh()
         setupNotifi()
+        loadServerData()
         self.view.isUserInteractionEnabled = true
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -144,7 +145,7 @@ extension MeViewController: UITableViewDelegate,UITableViewDataSource {
             SVProgressHUD.showSuccess(withStatus: words)
         
         }else if str == "推荐好友" {
-            SVProgressHUD.showInfo(withStatus: "开发中，敬请谅解")
+            shareSDK()
         }else if str == "个人设置" {
             let vc = WXEditMeViewController()
             self.navigationController?.pushViewController(vc, animated: true)
@@ -188,11 +189,11 @@ extension MeViewController {
     
     func shareSDK() {
         let shareParames = NSMutableDictionary()
-        shareParames.ssdkSetupShareParams(byText: "分享内容",
-                                          images : UIImage(named: "shareImg.png"),
-                                          url : NSURL(string:"http://mob.com") as URL!,
-                                          title : "分享标题",
-                                          type : SSDKContentType.image)
+        shareParames.ssdkSetupShareParams(byText: "推荐你使用AK官网",
+                                          images : UIImage(named: "icon-40"),
+                                          url : NSURL(string:"http://119.23.217.113:8002/admin/article/getWebView?article_id=21") as URL!,
+                                          title : "AK官网",
+                                          type : SSDKContentType.auto)
         
         //2.进行分享
         ShareSDK.showShareActionSheet(self.view, items: nil, shareParams: shareParames) { (state, platform, param, entity, err, flag) in

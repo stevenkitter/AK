@@ -55,13 +55,21 @@ extension HomeApi: TargetType {
             var params: [String: Any] = [:]
             params["page"] = page
             params["service"] = "Home.get_article"
-            params["from"] = "ios"
             params["class_name"] = "新闻"
+            let ver = Bundle.main.infoDictionary
+            if let version = ver?["CFBundleShortVersionString"] as? String, let fver = Float(version) {
+                params["version"] = Int(fver * 10)
+            }
             return params
         case let .getAd(classid):
             var params: [String: Any] = [:]
             params["classid"] = classid
             params["service"] = "Home.ad"
+            let ver = Bundle.main.infoDictionary
+            if let version = ver?["CFBundleShortVersionString"] as? String, let fver = Float(version) {
+                params["version"] = Int(fver * 10)
+            }
+            
             return params
         case let .getComment(article_id, user_id, page):
             var params: [String: Any] = [:]

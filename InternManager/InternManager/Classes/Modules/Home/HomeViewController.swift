@@ -204,6 +204,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let article = articles[indexPath.row]
         let vc = ArticleDetailViewController()
+        vc.article = article
         let webStr = WebUrl + (article.article_id ?? "") + "&user_id=" + (UserManager.shareUserManager.curUserInfo?.id ?? "")
         vc.articleID = article.article_id ?? ""
         vc.webURLStr = webStr
