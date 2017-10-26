@@ -69,7 +69,7 @@ class MeViewController: RootViewController {
         
         tableView.backgroundColor = UIColor.groupTableViewBackground
         
-        let bgView = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 200))
+        let bgView = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 135))
         bgView.backgroundColor = KNaviColor
         bgView.tag = 101
         tableView.insertSubview(bgView, at: 0)
@@ -190,8 +190,8 @@ extension MeViewController {
     func shareSDK() {
         let shareParames = NSMutableDictionary()
         shareParames.ssdkSetupShareParams(byText: "推荐你使用AK官网",
-                                          images : UIImage(named: "icon-40"),
-                                          url : NSURL(string:"http://119.23.217.113:8002/admin/article/getWebView?article_id=21") as URL!,
+                                          images : [UIImage(named: "icon-40"),UIImage(named: "icon-40"),UIImage(named: "icon-40")],
+                                          url : NSURL(string:"http://www.akwangdai.com:8002/admin/article/getWebView?article_id=21") as URL!,
                                           title : "AK官网",
                                           type : SSDKContentType.auto)
         
@@ -218,7 +218,7 @@ extension MeViewController: UIScrollViewDelegate {
         if space > 0 {
             var rect = tableView.viewWithTag(101)!.frame
             rect.origin.y = -space
-            rect.size.height = 200 + space
+            rect.size.height = 135 + space
             tableView.viewWithTag(101)!.frame = rect
         }
     }

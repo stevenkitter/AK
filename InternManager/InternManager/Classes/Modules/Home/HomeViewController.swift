@@ -33,7 +33,14 @@ class HomeViewController: RootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "AK官网"
-        automaticallyAdjustsScrollViewInsets = false
+        
+        //contentInsetAdjustmentBehavior = true
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+            // Fallback on earlier versions
+        }
         adCycleScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect(x: 0, y: 0, width: KScreenWidth, height: KAdViewH)) { (index) in
             //点击事件
             let model = self.ads[index]
@@ -208,6 +215,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let webStr = WebUrl + (article.article_id ?? "") + "&user_id=" + (UserManager.shareUserManager.curUserInfo?.id ?? "")
         vc.articleID = article.article_id ?? ""
         vc.webURLStr = webStr
+        vc.shareUrl = ShareUrl + ( article.article_id ?? "") + "&user_id=" + (UserManager.shareUserManager.curUserInfo?.id ?? "")
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -241,5 +249,15 @@ extension HomeViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         hideNavigationBar()
+    }
+}
+
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        guard let userId = UserManager.shareUserManager.curUserInfo?.id else {
+            self.goLogin()
+            return viewController is HomeViewController
+        }
+        return true
     }
 }

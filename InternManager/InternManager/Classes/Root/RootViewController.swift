@@ -53,6 +53,17 @@ class RootViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(self.tableView.mj_offsetY <= 150, animated: true)
         
     }
+    func goLogin() {
+        guard let nv = self.navigationController else {return}
+        for item in nv.viewControllers {
+            if item is LoginViewController {
+                return
+            }
+        }
+        let vc = LoginViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 extension RootViewController {

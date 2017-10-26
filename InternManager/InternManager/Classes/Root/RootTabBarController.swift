@@ -25,6 +25,7 @@ class RootTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChildViewControllers()
+        self.delegate = homeVc
     }
     
     func setupChildViewControllers() {

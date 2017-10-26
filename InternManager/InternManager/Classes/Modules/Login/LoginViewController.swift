@@ -37,17 +37,18 @@ class LoginViewController: RootViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "登录"
         setupUI()
         setupRx()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super .viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+//        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,6 +96,7 @@ class LoginViewController: RootViewController {
         case 2:
             print()
 //            self.dismissPresent()
+            self.navigationController?.popViewController(animated: true)
         case 3:
             print()
 //            self.dismiss(animated: true, completion: nil)

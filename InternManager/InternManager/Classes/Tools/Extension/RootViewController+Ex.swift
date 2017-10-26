@@ -25,7 +25,8 @@ extension RootViewController {
             return true
         }
         let loginVc = LoginViewController()
-        self.present(loginVc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(loginVc, animated: true)
+//        self.present(loginVc, animated: true, completion: nil)
         return false
     }
     
@@ -35,7 +36,8 @@ extension RootViewController {
         }
         let loginVc = LoginViewController()
         loginVc.closure = closure
-        self.present(loginVc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(loginVc, animated: true)
+//        self.present(loginVc, animated: true, completion: nil)
         return false
     }
     

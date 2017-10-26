@@ -89,6 +89,7 @@ extension WXCollectsViewController: UITableViewDelegate,UITableViewDataSource {
         let webStr = WebUrl + (article.article_id ?? "") + "&user_id=" + (UserManager.shareUserManager.curUserInfo?.id ?? "")
         vc.articleID = article.article_id ?? ""
         vc.webURLStr = webStr
+        
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

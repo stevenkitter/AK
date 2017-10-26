@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,13 +25,13 @@
                             <constraint firstAttribute="width" constant="50" id="rsL-gd-oB8"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgM-mP-qbX">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgM-mP-qbX">
                         <rect key="frame" x="70" y="10" width="197" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duC-IC-RLB">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duC-IC-RLB">
                         <rect key="frame" x="277" y="10" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
@@ -56,7 +56,6 @@
                     <constraint firstAttribute="trailing" secondItem="NJB-ti-LCb" secondAttribute="trailing" constant="10" id="87x-Xj-UVG"/>
                     <constraint firstAttribute="trailing" secondItem="Sd4-mr-hdx" secondAttribute="trailing" constant="10" id="CVc-Xh-nry"/>
                     <constraint firstItem="CgM-mP-qbX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Dsg-5a-dQx"/>
-                    <constraint firstItem="duC-IC-RLB" firstAttribute="leading" secondItem="CgM-mP-qbX" secondAttribute="trailing" constant="10" id="KBE-bv-oRo"/>
                     <constraint firstItem="ds2-KO-vyt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LQm-eE-Cmu"/>
                     <constraint firstItem="duC-IC-RLB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="NQl-F9-0Co"/>
                     <constraint firstItem="duC-IC-RLB" firstAttribute="leading" secondItem="CgM-mP-qbX" secondAttribute="trailing" constant="10" id="ZRL-cT-uhn"/>

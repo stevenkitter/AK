@@ -12,4 +12,5 @@ let BaseUrlStr = IpAddress + "8000/"      //前缀
 let ServiceUrlStr = "ak_interface/Public/demo/"
 let ImageUrl = IpAddress + "8002/public"
 let WebUrl = IpAddress + "8002/admin/article/getWebView?article_id="
+let ShareUrl = "http://www.akwangdai.com:8002/admin/article/getWebView?article_id="
 

@@ -30,6 +30,7 @@ class RegisterXViewController: RootViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "注册"
         setupUI()
         setupRx()
     }
@@ -47,6 +48,7 @@ class RegisterXViewController: RootViewController {
             self.navigationController?.popViewController(animated: true)
         case 2:
             print()
+            self.navigationController?.popViewController(animated: true)
 //            self.dismissPresent()
         default:
             break
@@ -138,7 +140,8 @@ class RegisterXViewController: RootViewController {
                     return
                 }
                 SVProgressHUD.showSuccess(withStatus: "注册成功请登录")
-                self.dismissPresent()
+                    
+             self.navigationController?.popViewController(animated: true)
                 
                 
             }, onError: { (error) in
@@ -156,8 +159,8 @@ class RegisterXViewController: RootViewController {
                     }
                     
                     SVProgressHUD.showSuccess(withStatus: "修改成功，请登录")
-                    self.dismiss(animated: true, completion: nil)
-                    
+                    //self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
                     
                     }, onError: { (error) in
                     WXActivityIndicatorView.stop()
