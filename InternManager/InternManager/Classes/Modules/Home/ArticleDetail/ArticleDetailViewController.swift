@@ -15,6 +15,7 @@ class ArticleDetailViewController: RootViewController {
     var article: Article?
     
     public var webURLStr = ""
+    public var shareUrl = ""
     public var articleID = ""
     
     let progressView = UIProgressView(progressViewStyle: .default).then {
@@ -150,7 +151,7 @@ class ArticleDetailViewController: RootViewController {
         let shareParames = NSMutableDictionary()
         shareParames.ssdkSetupShareParams(byText: article?.article_content ?? "",
                                           images : article?.file_path,
-                                          url : NSURL(string:webURLStr) as URL!,
+                                          url : NSURL(string:shareUrl) as URL!,
                                           title : article?.article_title ?? "",
                                           type : SSDKContentType.auto)
         

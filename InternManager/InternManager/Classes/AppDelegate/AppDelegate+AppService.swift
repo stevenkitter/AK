@@ -48,8 +48,8 @@ extension AppDelegate {
     func loginStateChanged(notifi: Notification) {
         if let bol = notifi.object as? Bool {
             guard bol else {
-                let logNav = RootNavigationController(rootViewController: LoginViewController())
-                self.window?.rootViewController = logNav
+                
+                self.window?.rootViewController = RootTabBarController()
                 return
             }
             guard let user = UserManager.shareUserManager.curUserInfo else{return}

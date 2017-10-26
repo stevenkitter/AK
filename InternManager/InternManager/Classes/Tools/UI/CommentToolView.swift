@@ -88,6 +88,7 @@ class CommentToolView: UIView {
     
     func loadUserInfo() {
         guard let userid = UserManager.shareUserManager.curUserInfo?.id else {
+            
             return
         }
         NetworkManager.providerHomeApi.request(.isCollect(article_id: article_id, user_id: userid)).mapJSON().subscribe(onNext: { [unowned self] (res) in
